@@ -24,7 +24,7 @@ cifar10-deeplearning-project/
 
 **Jupyter에서는 `CIFAR10_딥러닝실험.ipynb` 하나를 엽니다.** 그래프는 Notebook의 실행 출력에 남깁니다. `실험기록.csv`는 실험별 정확도와 설정을 빠르게 비교하는 표이며, 사람이 읽는 결과 요약과 메모는 `결과/실험결과.md` 하나에 계속 추가합니다.
 
-## CNN-01: 초기 실습 모델
+## CNN-01: 초기 모델
 
 기본 코드로 실행한 최초 결과입니다.
 
@@ -43,6 +43,22 @@ cifar10-deeplearning-project/
 
 **CNN-01의 검증정확도와 테스트정확도 67.13%는 서로 독립된 평가 결과가 아닙니다.** 동일한 Test Set을 `validation_data`와 `evaluate`에 사용했습니다. 최초 실습 결과를 보존하는 참고용 기록이며, 최종 모델의 공정한 비교 기준으로 사용하지 않습니다.
 
+## CNN-02: Epoch 변경
+
+CNN 구조는 유지하고 Epoch를 5에서 10으로 늘린 실험이다.
+
+| 항목 | 결과 |
+| --- | --- |
+| Epoch | 10 |
+| Train Accuracy | 84.64% |
+| Validation/Test Accuracy | 64.10% |
+| Best Validation Accuracy | 66.91% (Epoch 4) |
+| 판정 | 과적합 |
+
+Train Accuracy는 상승했지만 Validation Accuracy는 감소했고, 최고 Validation Accuracy는 Epoch 4에서 기록되었다. 이후 과적합 경향이 나타났다.
+
+현재 Validation과 Test는 동일한 Test Set을 사용하므로 CNN-01과 CNN-02는 초기 참고 실험으로 기록한다. 최종 모델의 공정한 비교 기준으로 사용하지 않는다.
+
 ## 실험 진행 방식
 
 1. 초기 CNN 모델에서 시작
@@ -54,8 +70,7 @@ cifar10-deeplearning-project/
 7. 최종 모델이 결정된 후 Test Set을 평가
 8. 마지막에 CNN, ViT, GPT 이미지 분류 결과를 비교
 
-다음 **CNN-02 기준 모델**에서는 CNN 구조를 유지, Train 45,000장 / Validation 5,000장 / Test 10,000장으로 분리하기
-모델 선정과 학습 조건 조정에는 Validation Set만 사용하고, Test Set은 최종 평가 전까지 사용 X
+향후 공정한 비교 실험에서는 CNN 구조를 유지하면서 Train 45,000장 / Validation 5,000장 / Test 10,000장으로 분리할 예정이다. 모델 선정과 학습 조건 조정에는 Validation Set만 사용하고, Test Set은 최종 평가 전까지 사용하지 않는다.
 
 ## 앞으로 진행할 실험
 
@@ -75,8 +90,8 @@ cifar10-deeplearning-project/
 
 | 실험번호 | 실험명 (예정) |
 | --- | --- |
-| CNN-01 | 초기 실습 모델 · 완료 |
-| CNN-02 | 기준 모델 |
+| CNN-01 | 초기 모델 · 완료 |
+| CNN-02 | Epoch 변경 · 완료 |
 | CNN-03 | Epoch 변경 실험 |
 | CNN-04 | CNN 구조 변경 실험 |
 | CNN-05 | Batch Normalization 실험 |
@@ -94,22 +109,22 @@ cifar10-deeplearning-project/
 
 각 실험을 마치면 Notebook 저장 → `실험기록.csv`와 `결과/실험결과.md` 갱신 → commit → tag → GitHub push 순으로 기록합니다. CSV 정확도는 0~100의 백분율 숫자로 쓰고, 아직 평가하지 않은 Test Accuracy는 빈칸으로 둡니다.
 
-CNN-01은 기존 EXP-01과 같은 최초 실험입니다. 당시 코드·출력·그래프는 기존 [EXP-01 tag](https://github.com/Inhamon0108/cifar10-deeplearning-project/tree/EXP-01)에 그대로 보존되어 있으며, 기존 commit과 tag는 변경하지 않습니다. 앞으로의 실험은 CNN-02, CNN-03처럼 기록합니다.
+CNN-01의 코드·출력·그래프는 [CNN-01 tag](https://github.com/Inhamon0108/cifar10-deeplearning-project/tree/CNN-01)에 보존되어 있습니다. 기존 commit과 tag는 변경하지 않고 이후 실험 결과를 정상적으로 누적합니다.
 
 Commit 메시지는 실험명과 실제 측정 결과가 바로 보이도록 짧게 씁니다. 다음 점수는 형식을 설명하는 **예시**이며 새로 측정한 결과가 아닙니다.
 
 ```text
-CNN-01 초기 실습 모델 - accuracy 67.13%
-CNN-02 기준 모델 - val accuracy 68.42%
+CNN-01 초기 모델 - accuracy 67.13%
+CNN-02 Epoch 변경 - 과적합 확인
 CNN-03 Epoch 변경 - val accuracy 72.31%
 ```
 
-예를 들어 CNN-02를 완료한 후 프로젝트 터미널에서:
+실험을 완료한 후 프로젝트 터미널에서 기록하는 형식은 다음과 같습니다. 아래 CNN-02 명령은 예시입니다:
 
 ```text
 git add CIFAR10_딥러닝실험.ipynb 실험기록.csv 결과/실험결과.md
-git commit -m "CNN-02 기준 모델 - val accuracy 68.42%"
-git tag -a CNN-02 -m "CNN-02 기준 모델"
+git commit -m "CNN-02 Epoch 변경 - 과적합 확인"
+git tag -a CNN-02 -m "CNN-02 Epoch 변경"
 git push origin main
 git push origin CNN-02
 ```
