@@ -10,3 +10,4 @@ CNN-06,Batch Size 변경,Batch Size 32 → 64,10,81.37,69.50,69.50,성능향상/
 CNN-07,Batch Size 변경,Batch Size 64 → 128,10,77.58,72.20,72.20,성능향상,"최고 Validation Accuracy 72.20% (Epoch 10). 10 Epoch까지 Validation 성능 향상 확인됨 개꿀"
 중간기록,수정 3, SEED = 42 고정. 시드값 고정하는걸 까먹었다.,,,,,,
 CNN-08,Batch Size 변경,Batch Size 128 → 256,10,73.75,69.10,69.10,학습속도 저하,"Epoch 10까지 Validation 성능은 계속 상승했으나 Batch 128 보단 낮게 나옴"
+중간기록,수정 4, 256이 나쁘게 나왔으니 Batch Size는 128으로 고정하자,,,,,,
