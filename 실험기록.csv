@@ -13,3 +13,4 @@ CNN-08,Batch Size 변경,Batch Size 128 → 256,10,73.75,69.10,69.10,학습속�
 중간기록,수정 4, 256이 나쁘게 나왔으니 Batch Size는 128으로 고정하자. 정규화 해볼생각,,,,,,
 CNN-09,BatchNorm 적용,Batch Size 256 상태에서 Batch Normalization 추가,10,90.09,56.52,56.52,과적합,
 중간기록, 수정 5, "09는 Seed 42. 최고 Validation Accuracy 64.80% (Epoch 4). BatchNorm 적용 후 Train Accuracy는 크게 증가했지만 Validation 성능은 하락",,,,,,"사실 배치 줄이는거 까먹음"
+CNN-10,BatchNorm 적용,Batch Size 128에서 Batch Normalization 적용,10,92.28,64.67,64.67,과적합,"Seed 42. 최고 Validation Accuracy 70.43% (Epoch 7). Validation 성능 변동이 크고 후반 과적합 발생"
