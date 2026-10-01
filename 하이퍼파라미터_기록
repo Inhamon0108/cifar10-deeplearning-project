@@ -1,0 +1,8 @@
+실험번호,Conv1,Conv2,Conv3,Kernel Size,Pooling,Dense Units,Epoch,Batch Size,Optimizer,Learning Rate,BatchNorm,Dropout,Data Augmentation,Seed
+CNN-01,32,64,64,3x3,2x2 MaxPool,64,5,32,Adam,0.001,없음,없음,없음,미고정
+CNN-02,32,64,64,3x3,2x2 MaxPool,64,10,32,Adam,0.001,없음,없음,없음,미고정
+CNN-03,32,64,64,3x3,2x2 MaxPool,64,15,32,Adam,0.001,없음,없음,없음,미고정
+CNN-04,32,64,128,3x3,2x2 MaxPool,64,10,32,Adam,0.001,없음,없음,없음,미고정
+CNN-05,32,128,128,3x3,2x2 MaxPool,64,10,32,Adam,0.001,없음,없음,없음,미고정
+CNN-06,32,128,128,3x3,2x2 MaxPool,64,10,64,Adam,0.001,없음,없음,없음,미고정
+CNN-07,32,128,128,3x3,2x2 MaxPool,64,10,128,Adam,0.001,없음,없음,없음,미고정
