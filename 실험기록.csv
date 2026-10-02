@@ -33,3 +33,4 @@ CNN-17_3,Dropout 재검증,Dropout 0.3 설정 Seed 변경,10,72.20,72.56,,123,�
 CNN-17_4,Dropout 재검증,Dropout 0.3 설정 Seed 변경,10,71.11,71.92,,2026,재현성 확인,"최고 Validation Accuracy 71.92% (Epoch 10). 최소 Validation Loss 0.8133 (Epoch 10)"
 CNN-17_5,Dropout 재검증,Dropout 0.3 설정 Seed 변경,10,73.37,72.64,,7,재현성 확인,"최고 Validation Accuracy 72.64% (Epoch 10). 최소 Validation Loss 0.7909 (Epoch 10)"
 CNN-17_6,Dropout 재검증,Dropout 0.3 설정 Seed 변경,10,71.95,72.16,,99,재현성 확인,"최고 Validation Accuracy 72.16% (Epoch 10). 최소 Validation Loss 0.8162 (Epoch 9)"
+중간기록,수정 10, 드롭아웃은 0.3으로 고정 ,,,,,,,
