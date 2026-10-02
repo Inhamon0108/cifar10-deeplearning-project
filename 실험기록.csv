@@ -25,5 +25,6 @@ CNN-14,Dropout 변경,CNN-07 기준 Dense 뒤 Dropout 0.3 적용,10,75.02,73.58,
 CNN-15,Dropout 변경,CNN-07 기준 Dense 뒤 Dropout 0.5 적용,10,70.20,73.16,,42,성능향상,"최고 Validation Accuracy 73.16% (Epoch 10). 최소 Validation Loss 0.7833 (Epoch 10). Dropout 영향으로 Validation Accuracy가 Train Accuracy보다 높게 나타남"
 중간기록,수정 8,14번 파라미터가 확실히 좋아 보임. 일단 좀 더 좁혀서 한번 더 돌려보자. ,,,,,,,
 CNN-16,Dropout 변경,CNN-07 기준 Dense 뒤 Dropout 0.2 적용,10,75.29,72.72,,42,성능향상,"최고 Validation Accuracy 72.72% (Epoch 10). 최소 Validation Loss 0.7958 (Epoch 9)"
-CNN-17,Dropout 변경,CNN-07 기준 Dense 뒤 Dropout 0.3 적용,10,75.02,73.58,,42,채택,"최고 Validation Accuracy 73.58% (Epoch 10). 최소 Validation Loss 0.7679 (Epoch 10). Dropout 0.3 재실험 결과 동일하게 재현됨"
+CNN-17,Dropout 변경,CNN-07 기준 Dense 뒤 Dropout 0.3 적용,10,75.02,73.58,,42,동일,"최고 Validation Accuracy 73.58% (Epoch 10). 최소 Validation Loss 0.7679 (Epoch 10). Dropout 0.3 재실험 결과 동일하게 재현됨"
 CNN-18,Dropout 변경,CNN-07 기준 Dense 뒤 Dropout 0.4 적용,10,72.86,73.28,,42,성능향상,"최고 Validation Accuracy 73.28% (Epoch 10). 최소 Validation Loss 0.7818 (Epoch 10). 0.3보다 소폭 낮음"
+중간기록,수정 9, 드롭아웃은 0.3으로 고정? 이걸로 한 번 시드 다르게 해서 여러번 돌려보기 ,,,,,,,
